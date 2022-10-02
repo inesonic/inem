@@ -1,5 +1,5 @@
 ====
-inen
+inem
 ====
 **Note:** This library is licensed under both GPLv2 and commercial license
 terms.
