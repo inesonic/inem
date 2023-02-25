@@ -26,6 +26,7 @@
 ***********************************************************************************************************************/
 
 #include <QtTest/QtTest>
+#include <matrix_api.h>
 
 #include "m_api.h"
 
@@ -63,6 +64,7 @@
 #include "test_model_api.h"
 #include "test_regressions.h"
 
+
 #define TEST(_X) {                                                  \
     _X _x;                                                          \
     testStatus |= QTest::qExec(&_x, argumentCount, argumentValues); \
@@ -73,40 +75,40 @@ int main(int argumentCount, char** argumentValues) {
 
     M::Api::setMatrixApi(&matApi);
 
-//    TEST(TestReferenceCounter)
-//    TEST(TestRegressions)
+    TEST(TestReferenceCounter)
+    TEST(TestRegressions)
     TEST(TestSummationOperator)
-//    TEST(TestVariantOperators)
-//    TEST(TestBooleanFunctions)
-//    TEST(TestSetFunctions)
-//    TEST(TestVariantFunctions)
-//    TEST(TestBoolean)
-//    TEST(TestComplex)
-//    TEST(TestComplexOperators)
-//    TEST(TestVariant)
-//    TEST(TestImplicitOrdering)
-//    TEST(TestList)
-//    TEST(TestUnorderedSet)
-//    TEST(TestOrderedSet)
-//    TEST(TestModelRange)
-//    TEST(TestSet)
-//    TEST(TestMTuple)
-//    TEST(TestMRange)
-//    TEST(TestModelTuple)
-//    TEST(TestPerThread)
-//    TEST(TestBasicFunctions)
-//    TEST(TestTrigonometricFunctions)
-//    TEST(TestHyperbolicFunctions)
-//    TEST(TestStatisticalFunctions)
-//    TEST(TestFileFunctions)
-//    TEST(TestMatrixBoolean)
-//    TEST(TestMatrixInteger)
-//    TEST(TestMatrixReal)
-//    TEST(TestMatrixComplex)
-//    TEST(TestMatrixRandomFunctions)
-//    TEST(TestSummationOperator)
-//    TEST(TestIdentifierDatabase)
-//    TEST(TestModelApi)
+    TEST(TestVariantOperators)
+    TEST(TestBooleanFunctions)
+    TEST(TestSetFunctions)
+    TEST(TestVariantFunctions)
+    TEST(TestBoolean)
+    TEST(TestComplex)
+    TEST(TestComplexOperators)
+    TEST(TestVariant)
+    TEST(TestImplicitOrdering)
+    TEST(TestList)
+    TEST(TestUnorderedSet)
+    TEST(TestOrderedSet)
+    TEST(TestModelRange)
+    TEST(TestSet)
+    TEST(TestMTuple)
+    TEST(TestMRange)
+    TEST(TestModelTuple)
+    TEST(TestPerThread)
+    TEST(TestBasicFunctions)
+    TEST(TestTrigonometricFunctions)
+    TEST(TestHyperbolicFunctions)
+    TEST(TestStatisticalFunctions)
+    TEST(TestFileFunctions)
+    TEST(TestMatrixBoolean)
+    TEST(TestMatrixInteger)
+    TEST(TestMatrixReal)
+    TEST(TestMatrixComplex)
+    TEST(TestMatrixRandomFunctions)
+    TEST(TestSummationOperator)
+    TEST(TestIdentifierDatabase)
+    TEST(TestModelApi)
 
     return testStatus;
 }

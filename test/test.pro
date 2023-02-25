@@ -29,6 +29,8 @@ TEMPLATE = app
 QT += core testlib
 CONFIG += testcase c++14
 
+DEFINES += INEM_USE_OS_ESCAPE
+
 unix:!macx {
     # GCC produces rather stupid warnings related to blackslashes at the EOL in comments.  Since we use backslashes to
     # describe operations on R-B trees in m_ordered_set.h, we end up with lots of these spurious and rather meaningless
@@ -139,11 +141,15 @@ win32 {
 # Libraries
 #
 
+defined(SETTINGS_PRI, var) {
+    include($${SETTINGS_PRI})
+}
+
 INCLUDEPATH += $${INEUTIL_INCLUDE}
 INCLUDEPATH += $${INEMAT_INCLUDE}
 INCLUDEPATH += $${BOOST_INCLUDE}
 
-LIBS += $${INEUTIL_LIBDIR} -lineutil
+LIBS += -L$${INEUTIL_LIBDIR} -lineutil
 
 defined(INEMAT_PRI, var) {
     include($${INEMAT_PRI})
