@@ -130,9 +130,9 @@ unix {
         LIBS += -L$${INEM_BASE}/build/release/ -linem
 
         macx {
-            PRE_TARGETDEPS += $${INEM_BASE}/build/release/libinem.so
-        } else {
             PRE_TARGETDEPS += $${INEM_BASE}/build/release/libinem.dylib
+        } else {
+            PRE_TARGETDEPS += $${INEM_BASE}/build/release/libinem.so
         }
     }
 }
