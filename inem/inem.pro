@@ -314,26 +314,26 @@ PRIVATE_HEADERS = source/m_compiler_abstraction.h \
                   source/m_per_thread_trng.h \
 
 ########################################################################################################################
-# Windows runtime hooks.
-#
-
-defined(INEM_WINDOWS_RUNTIME_PRI, var) {
-    include($${INEM_WINDOWS_RUNTIME_PRI})
-}
-
-########################################################################################################################
 # Setup headers and installation
 #
 
 HEADERS = $$API_HEADERS $$CUSTOMER_HEADERS $$PRIVATE_HEADERS $$RUNTIME_HEADERS
 
 ########################################################################################################################
-# Libraries
+# Windows runtime hooks.
 #
 
 defined(SETTINGS_PRI, var) {
     include($${SETTINGS_PRI})
 }
+
+defined(INEM_WINDOWS_RUNTIME_PRI, var) {
+    include($${INEM_WINDOWS_RUNTIME_PRI})
+}
+
+########################################################################################################################
+# Libraries
+#
 
 INCLUDEPATH += $${INEMAT_INCLUDE}
 INCLUDEPATH += $${BOOST_INCLUDE}
